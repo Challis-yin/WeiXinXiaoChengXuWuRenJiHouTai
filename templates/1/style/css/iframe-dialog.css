@@ -1,0 +1,32 @@
+.iframe-dialog{
+    width:80%;
+    height: 80%;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    border:1px solid #21BA9B;
+    z-index: 2147483584;
+}
+
+.iframe-dialog iframe{
+    width:100%;
+    height: calc(100% - 36px);
+    border: none;
+}
+
+.iframe-dialog .iframe-dialog-title{
+    height: 36px;
+    line-height: 36px;
+    background: #21BA9B;
+    color: #FFF;
+    padding-left: 10px;
+}
+
+.iframe-dialog .iframe-dialog-title a{
+    float: right;
+    color:#FFF;
+    font-weight: bolder;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}

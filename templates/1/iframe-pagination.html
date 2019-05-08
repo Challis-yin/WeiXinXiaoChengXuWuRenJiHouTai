@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="style/css/jquery.pagination.css" />
+		<script src="style/js/jquery-3.2.1.min.js"></script>
+		<script src="style/js/jquery.pagination.min.js"></script>
+	</head>
+	<body>
+		<div class="xbase_pagediv"></div>
+		<script>
+			$(".xbase_pagediv ").createPage({
+			    pageNum: 20,
+			    current: 6,
+			    backfun: function(e) {
+			        alert(JSON.stringify(e));
+			    }
+			});
+		</script>
+	</body>
+</html>

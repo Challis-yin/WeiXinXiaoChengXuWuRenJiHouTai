@@ -1,0 +1,1 @@
+lang["module_1"] = "l am module text";

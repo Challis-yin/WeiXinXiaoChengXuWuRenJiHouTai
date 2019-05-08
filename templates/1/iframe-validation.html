@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script src="style/js/jquery-3.2.1.min.js"></script>
+  <script src="style/js/bootstrap.min.js"></script>
+  <script src="style/js/dialog-plus.js"></script>
+  <script src="style/js/child.js"></script>
+  <script src="style/js/validation.js"></script>
+  <link rel="stylesheet" href="style/css/bootstrap.min.css" />
+<link rel="stylesheet" href="style/css/formPanel.css" />
+ 
+  <title></title>
+ </head>
+ <body>
+ 	
+ 
+ 	<div></div>
+ 	<hr />
+	校验模块
+	<form id="form" action="data.php" onsubmit="return validation('form',false,fun);">
+		姓名：<input type="text" name="username" regex="^\d{1}$" maxlength=5 message="请输入正确的姓名" /><br />
+		密码：<input type="password" name="userpass" message="请输入密码" /><br />
+		年龄：<input type="number" name="userage" message="请输入年龄" /><br />
+		出生：<input type="date" name="userdate" message="请输入出生日期" /><br />
+		介绍：
+		<textarea name="userabout" message="请输入介绍信息"></textarea>
+		<br />
+		<button>提交注册</button>
+	</form>
+	
+	<div>
+		1.默认校验所有字段，不校验的字段请加ispass属性<br />
+		2.校验可以编写“message”属性用于显示。<br />
+		3.限制输入长度“maxlength” 即可。<br />
+		4.使用“regex”进行正则校验<br />
+	</div>
+	
+	<script type="text/javascript">
+		//校验回调方法
+		var fun = function(status,obj,message,json){
+			alert("status:"+ status +"	message："+ message + "::" + JSON.stringify(json));
+		}
+	</script>
+ </body>
+</html>

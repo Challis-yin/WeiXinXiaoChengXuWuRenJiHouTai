@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script src="Language/jquery-3.2.1.min.js"></script>
+  
+ </head>
+ <body>
+  多语言切换框架
+  <li>
+	支持url、扩展文件、cookie、配置文件（优先级递减）四种方式进行多语言切换。
+  </li>
+  <li>
+	支持从url中获取内容（开启直接返回语言编号，不开启请返回none）
+  </li>
+  <li>
+	支持语言库模块化，在加载了locale、您可以设置还需要加载的语言库模块
+  </li>
+  <br/>
+  <input value="" id="val_1" name="hahhaa"/>
+  <br />
+  <div id="div_1"></div>
+  <br />
+  
+  <div id="div_2"></div>
+  <br />
+  ------------------------------
+  <br/>
+  正常加载如下：<span id="app_1"></span><br/>
+  test模块加载如下：<span id="module_1"></span><br />
+  test2模块加载如下：<span id="module_2"></span><br />
+  <a id="tag1" href="demo.html?module_lang=demo&lang=cn" target="_blank">查看DEMO(中文版)</a> |   <a href="demo.html?module_lang=demo&lang=en" target="_blank">查看DEMO(英文版)</a>
+  
+  <script src="Language/Lang.js"></script>
+  <script>
+  	setLang("div_2","我是通过setLang设置并绑定的");
+  	bindText("div_2");
+  	bindValue("val_1");
+  	bindText("div_1");
+  	bindTag("tag1","title");
+	bindView("app_1");
+  </script>
+ </body>
+</html>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>表格</title>
+
+<link rel="stylesheet" href="style/bootstrap-table.css" />
+<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="style/bootstrap-table.js"></script>
+<script src="style/bootstrap-table-zh-CN.js"></script>
+<script>
+$(document).ready(function(){
+	$('table').on('all.bs.table', function() {
+		var rows = $(this).bootstrapTable("getSelections");
+		if(rows.length == 1) {
+			$(".only-one").removeAttr("disabled");
+			$(".only-more").removeAttr("disabled");
+		} else if(rows.length > 1){
+			$(".only-more").removeAttr("disabled");
+			$(".only-one").attr("disabled", "disabled");
+		} else {
+			$(".only-one").attr("disabled", "disabled");
+			$(".only-more").attr("disabled", "disabled");
+		}
+	});
+});
+</script>
+
+</head>
+<body>
+<div id="toolbar"><button type="button" class="btn btn-default" id="addBtn">
+				<i class="glyphicon glyphicon-plus-sign"></i>
+				增加学校
+			</button>
+			
+			<button type="button" class="btn btn-default only-one" id="editBtn"
+				disabled="disabled" data-toggle="modal" data-target="#">
+				<i class="glyphicon glyphicon-pencil"></i>
+				编辑学校
+			</button>
+</div>
+<table 
+	data-url="data1.json"
+	data-toggle="table" 
+	data-striped="true"
+	data-pagination="true"
+	data-side-pagination="server"
+	data-page-list="[10,20]"
+	data-search="true"
+	data-toolbar="#toolbar"
+	data-click-to-select="true"
+
+>
+    <thead>
+        <tr>
+			<th data-field="check" data-checkbox="true">操作</th> 
+            <th data-field="id" data-formatter="id_formatter">Item ID</th>
+            <th data-field="name">Item Name</th>
+            <th data-field="price">Item Price</th>
+        </tr>
+    </thead>
+</table>
+<script>
+function id_formatter(value,rows,index){
+	return value+"岁";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title id="ttt"></title>
+		<style>
+			#title{font-szie:16px;text-align: center;width: 100%;height:50px;line-height: 50px;border-bottom: 2px dashed aquamarine;}
+			#content{width:80%;margin:0px auto;line-height: 36px;text-indent: 2em;}
+			#footer{text-align: center;width: 100%;position:fixed;bottom:0;}
+		</style>
+		<script src="../../style/js/jquery-3.2.1.min.js"></script>
+	</head>
+	<body>
+		<div id="title"></div>
+		<div id="content"></div>
+		<div id="footer"></div>
+	</body>
+	
+	<script src="Language/Lang.js"></script>
+	<script>
+		bindTitle("title");
+		bindText("title");
+		bindView("content");
+		bindView("footer");
+	</script>
+</html>

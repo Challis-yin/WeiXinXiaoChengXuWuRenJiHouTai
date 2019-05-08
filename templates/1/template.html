@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="style/js/jquery-1.10.2.js"></script>
+		<script src="style/js/template.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul id="ul">
+				
+			</ul>
+		</div>
+		<script>
+			var json = [];
+			json.push({"title":"姓名","name":"董志平","obj":{"extends":"ok"}});
+			json.push({"title":"性别","name":"男"});
+			parseTemplate(json,"/XBaseAdmin/temp","#ul");
+		</script>
+	</body>
+</html>

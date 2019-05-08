@@ -1,0 +1,129 @@
+/**********表格**************/
+#xbase-table-box{
+	margin: 5px;
+}
+
+#xbase-table-box #xbase-table {
+    width: 100%;
+}
+
+#xbase-table-box #xbase-table-toolbar {
+    height: 50px;
+    line-height: 50px;
+}
+
+th {
+    font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #909399;
+    border-right: 1px solid #EBEEF5;
+    border-bottom: 1px solid #EBEEF5;
+    border-top: 1px solid #EBEEF5;
+    border-left: 1px solid #EBEEF5;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    background: #FFF;
+}
+
+td {
+    border-right: 1px solid #EBEEF5;
+    border-bottom: 1px solid #EBEEF5;
+    padding: 3px 3px 3px 6px;
+    color: #606266;
+    min-width: 50px;
+    max-width: 200px;
+    text-align: center;
+}
+
+th input {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 40px;
+}
+
+td input {
+    width: 16px;
+    height: 16px;
+}
+
+td:nth-child(1) {
+    border-left: 1px solid #EBEEF5;
+    border-top: 0;
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+tr:nth-child(odd) {
+    background: #F9F9F9;
+}
+
+tr{
+    height: 36px;
+    line-height: 36px;
+}
+
+tr:nth-child(even) {
+    background: #ffffff;
+}
+
+tr:hover {
+    background: #F5F7FA;
+}
+
+#xbase-table-box #xbase-table-loading {
+    text-align: center;
+    margin: 5px;
+}
+
+#xbase-table-pagination {
+    clear: both;
+    height:36px;
+    margin-top: 5px;
+}
+
+#xbase-table-pagination a:hover {
+    color:#409EFF;
+}
+
+#xbase-table-pagination a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    min-width: 30px;
+    color: #606266;
+    background: #F4F4F5;
+    border-radius: 2px;
+    margin: 3px;
+    height:30px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+#xbase-table-pagination span {
+    display: inline-block;
+    min-width: 30px;
+    color: #606266;
+    text-align: center;
+    background: #F4F4F5;
+    border-radius: 2px;
+    margin: 3px;
+    height: 30px;
+    line-height: 30px;
+}
+
+#xbase-table-pagination .currentPage {
+    background: #409EFF;
+    color:#FFF;
+}
+
+#xbase-table-pagination .prevPage {
+
+}
+
+#xbase-table-pagination .nextPage {
+
+}
+
+

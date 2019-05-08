@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="/static/add/scriptaculous/lib/prototype.js" type="text/javascript"></script>
+<script src="/static/add/scriptaculous/src/effects.js" type="text/javascript"></script>
+<script type="text/javascript" src="/static/add/validation.js"></script>
+<script type="text/javascript">
+
+</script>
+<link title="style1" rel="stylesheet" href="/static/add/style.css" type="text/css" />
+<link title="style2" rel="alternate stylesheet" href="/static/add/style2.css" type="text/css" />
+<link title="style3" rel="alternate stylesheet" href="/static/add/style3.css" type="text/css" />
+</head>
+<body>
+    <div class="style_changer">
+    	<div class="style_changer_text">Themes:</div>
+        <input type="submit" value="1" onclick="setActiveStyleSheet('style1');" />
+        <input type="submit" value="2" onclick="setActiveStyleSheet('style2');" />
+        <input type="submit" value="3" onclick="setActiveStyleSheet('style3');" />
+    </div>
+
+	<div class="form_content">
+    <form id="test" action="updatavids" method="POST">
+    <fieldset>
+        <legend>视频属性</legend>
+
+        <div class="form-row">
+
+            <div class="field-widget"><input  type="hidden" name="id" id="field0" class="required" title="名称"  value = "{{vid_id}}"/></div>
+        </div>
+
+        <div class="form-row">
+            <div class="field-label"><label for="field1">视频标题</label>:</div>
+            <div class="field-widget"><input name="title" id="field1" class="required" title="名称" value = "{{vid_info}}"/></div>
+        </div>
+
+        <div class="form-row">
+            <div class="field-label"><label for="field2">视频来源</label>:</div>
+            <div class="field-widget"><input name="tag" id="field2" class="required" title="Enter your name" value="{{vid_tag}}" /></div>
+        </div>
+
+        <div class="form-row">
+            <div class="field-label"><label for="field2">视频网址</label>:</div>
+            <div class="field-widget"><input name="url" id="field3" class="required" title="Enter your name" value="{{vid_url}}"/></div>
+        </div>
+
+
+
+
+    </fieldset>
+
+    <input type="submit" class="submit" value="Submit" />
+    <input class="reset" type="button" value="Reset" onclick="valid.reset(); return false" />
+    </form>
+    </div>
+    <script type="text/javascript">
+        function formCallback(result, form) {
+            window.status = "valiation callback for form '" + form.id + "': result = " + result;
+        }
+
+        var valid = new Validation('test', {immediate : true, onFormValidate : formCallback});
+        Validation.addAllThese([
+            ['validate-password', '> 6 characters', {
+                minLength : 7,
+                notOneOf : ['password','PASSWORD','1234567','0123456'],
+                notEqualToField : 'field1'
+            }],
+            ['validate-password-confirm', 'please try again.', {
+                equalToField : 'field8'
+            }]
+        ]);
+    </script>
+
+</body>
+</html>
